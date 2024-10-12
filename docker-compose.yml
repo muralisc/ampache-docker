@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  ampache:
+    image: ampache/ampache:latest
+    container_name: ampache
+    restart: unless-stopped
+    ports:
+      - 4040:80
+    #    user: 1000:1000
+    volumes:
+      # - /home/murali/data/tmp/ampache/config:/var/www/config
+      # - /home/murali/data/tmp/ampache/log:/var/log/ampache
+      - /home/murali/data/Songs:/media:ro
+      # - /home/murali/data/tmp/ampache/mysql:/var/lib/mysql
