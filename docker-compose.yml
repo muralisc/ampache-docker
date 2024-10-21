@@ -7,9 +7,14 @@ services:
     restart: unless-stopped
     ports:
       - 4040:80
-    #    user: 1000:1000
+    environment:
+      - PGID = 1000
+      - PUID = 1000
+    # user: 1000:1000
     volumes:
-      # - /home/murali/data/tmp/ampache/config:/var/www/config
-      # - /home/murali/data/tmp/ampache/log:/var/log/ampache
+      # NOTE: mark the config directory as 777
+      # `sudo chmod -Rv 777 ~/data/tmp/ampache/config`
+      - /home/murali/data/tmp/ampache/config:/var/www/config:rw
+      - /home/murali/data/tmp/ampache/log:/var/log/ampache:rw
       - /home/murali/data/Songs:/media:ro
-      # - /home/murali/data/tmp/ampache/mysql:/var/lib/mysql
+      - /home/murali/data/tmp/ampache/mysql:/var/lib/mysql:rw
