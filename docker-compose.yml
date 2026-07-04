@@ -13,8 +13,8 @@ services:
     # user: 1000:1000
     volumes:
       # NOTE: mark the config directory as 777
-      # `sudo chmod -Rv 777 ~/data/tmp/ampache/config`
-      - /home/murali/data00/tmp/ampache/config:/var/www/config:rw
-      - /home/murali/data00/tmp/ampache/log:/var/log/ampache:rw
+      # `sudo chmod -Rv 777 ~/data/docker_data/ampache/config`
+      - /home/murali/data00/docker_data/ampache/config:/var/www/config:rw
+      - /home/murali/data00/docker_data/ampache/log:/var/log/ampache:rw
       - /home/murali/data00/Songs:/media:ro
-      - /home/murali/data00/tmp/ampache/mysql:/var/lib/mysql:rw
+      - /home/murali/data00/docker_data/ampache/mysql:/var/lib/mysql:rw
